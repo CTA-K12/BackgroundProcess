@@ -14,7 +14,7 @@ class BackgroundProcessTest extends \PHPUnit_Framework_TestCase
 
         $this->assertNotNull($bgProcess);
         $this->assertEquals('Starting', $bgProcess->getStatus());
-        $this->assertNotNull($bgProcess->getStartDate());
+        $this->assertNotNull($bgProcess->getStarted());
         $this->assertEquals(0, $bgProcess->getProcessed());
         $this->assertEquals(1, $bgProcess->getToProcess());
         $this->assertEquals(0, $bgProcess->getSuccessCount());
@@ -63,7 +63,7 @@ class BackgroundProcessTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(25, $bgProcess->getProcessed());
 
         $bgProcess->setProcessed('Cherry Pie');
-        $this->assertEquals(25, $bgProcess->getProcessed);
+        $this->assertEquals(25, $bgProcess->getProcessed());
     }
 
     /**
@@ -85,7 +85,7 @@ class BackgroundProcessTest extends \PHPUnit_Framework_TestCase
         $bgProcess->setSuccessCount(3.141592);
         $this->assertEquals(8, $bgProcess->getSuccessCount());
 
-        $bgProcess->setSucessCount('Pumpkin Pie');
+        $bgProcess->setSuccessCount('Pumpkin Pie');
         $this->assertEquals(8, $bgProcess->getSuccessCount());
 
         $bgProcess->setSuccessCount(15);
@@ -106,15 +106,15 @@ class BackgroundProcessTest extends \PHPUnit_Framework_TestCase
 
         $bgProcess->setToProcess(2);
         $bgProcess->increment();
-        $this->assertEquals(1, $this->getProcessed());
-        $this->assertEquals(2, $this->getToProcess());
-        $this->assertEquals(0, $this->getSuccessCount());
+        $this->assertEquals(1, $bgProcess->getProcessed());
+        $this->assertEquals(2, $bgProcess->getToProcess());
+        $this->assertEquals(0, $bgProcess->getSuccessCount());
 
         $bgProcess->increment();
         $bgProcess->increment();
-        $this->assertEquals(3, $this->getProcessed());
-        $this->assertEquals(3, $this->getToProcess());
-        $this->assertEquals(0, $this->getSuccessCount());
+        $this->assertEquals(3, $bgProcess->getProcessed());
+        $this->assertEquals(3, $bgProcess->getToProcess());
+        $this->assertEquals(0, $bgProcess->getSuccessCount());
     }
 
     /**
@@ -125,15 +125,15 @@ class BackgroundProcessTest extends \PHPUnit_Framework_TestCase
 
         $bgProcess->setToProcess(2);
         $bgProcess->incrementSuccess();
-        $this->assertEquals(1, $this->getProcessed());
-        $this->assertEquals(2, $this->getToProcess());
-        $this->assertEquals(1, $this->getSuccessCount());
+        $this->assertEquals(1, $bgProcess->getProcessed());
+        $this->assertEquals(2, $bgProcess->getToProcess());
+        $this->assertEquals(1, $bgProcess->getSuccessCount());
 
         $bgProcess->incrementSuccess();
         $bgProcess->incrementSuccess();
-        $this->assertEquals(3, $this->getProcessed());
-        $this->assertEquals(3, $this->getToProcess());
-        $this->assertEquals(3, $this->getSuccessCount());
+        $this->assertEquals(3, $bgProcess->getProcessed());
+        $this->assertEquals(3, $bgProcess->getToProcess());
+        $this->assertEquals(3, $bgProcess->getSuccessCount());
     }
 
     /**
@@ -144,14 +144,14 @@ class BackgroundProcessTest extends \PHPUnit_Framework_TestCase
 
         $bgProcess->setToProcess(2);
         $bgProcess->incrementFailure();
-        $this->assertEquals(1, $this->getProcessed());
-        $this->assertEquals(2, $this->getToProcess());
-        $this->assertEquals(0, $this->getSuccessCount());
+        $this->assertEquals(1, $bgProcess->getProcessed());
+        $this->assertEquals(2, $bgProcess->getToProcess());
+        $this->assertEquals(0, $bgProcess->getSuccessCount());
 
         $bgProcess->incrementFailure();
         $bgProcess->incrementFailure();
-        $this->assertEquals(3, $this->getProcessed());
-        $this->assertEquals(3, $this->getToProcess());
-        $this->assertEquals(0, $this->getSuccessCount());
+        $this->assertEquals(3, $bgProcess->getProcessed());
+        $this->assertEquals(3, $bgProcess->getToProcess());
+        $this->assertEquals(0, $bgProcess->getSuccessCount());
     }
 }
