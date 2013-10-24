@@ -1,0 +1,40 @@
+MESD\ORMed\ORMedBundle\Entity\BackgroundProcess:
+    type: entity
+    table: bgprocess.background_process
+    repositoryClass: MESD\ORMed\ORMedBundle\Repository\BackgroundProcessRepository
+    fields:
+        id:
+            column: id
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        started:
+            column: started
+            type: datetime
+            nullable: false
+        updated:
+            column: updated
+            type: datetime
+            nullable: true
+        status:
+            column: status
+            type: string
+            length: 32
+            nullable: false
+        message:
+            column: message
+            type: text
+        toProcess:
+            column: to_process
+            type: integer
+        processed:
+            column: processed
+            type: integer
+        successCount:
+            column: success_count
+            type: integer
+
+    lifecycleCallbacks:
+        prePersist: [ setUpdatedValue ]
+        preUpdate: [ setUpdatedValue ]
