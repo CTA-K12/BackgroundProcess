@@ -154,4 +154,34 @@ class BackgroundProcessTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(3, $bgProcess->getToProcess());
         $this->assertEquals(0, $bgProcess->getSuccessCount());
     }
+
+    /**
+     *  Test the return process parameters as an array function
+     */
+    public function testGetProcessParametersAsArray() {
+        $bgProcess = new BackgroundProcess();
+
+        $arr = array(
+            'duck'      => 'quack',
+            'cow'       => 'moo',
+            'cat'       => 'meow',
+            'dog'       => 'woof',
+        );
+
+        $json = json_encode($arr);
+        $bgProcess->setProcessParameters($json);
+        $this->assertEquals($json, $bgProcess->getProcessParameters());
+
+        $this->assertCount(4, $bgProcess->getProcessParametersAsArray());
+
+        $this->assertTrue(array_key_exists('duck', $bgProcess->getProcessParametersAsArray()));
+        $this->assertTrue(array_key_exists('cow', $bgProcess->getProcessParametersAsArray()));
+        $this->assertTrue(array_key_exists('cat', $bgProcess->getProcessParametersAsArray()));
+        $this->assertTrue(array_key_exists('dog', $bgProcess->getProcessParametersAsArray()));
+
+        $this->assertContains('quack', $bgProcess->getProcessParametersAsArray());
+        $this->assertContains('moo', $bgProcess->getProcessParametersAsArray());
+        $this->assertContains('meow', $bgProcess->getProcessParametersAsArray());
+        $this->assertContains('woof', $bgProcess->getProcessParametersAsArray());
+    }
 }

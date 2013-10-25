@@ -385,4 +385,12 @@ class BackgroundProcess
     {
         $this->increment();
     }
+
+    /**
+     *  Return the process parameters as an array (for easier twig rendering)
+     *  @return array
+     */
+    public function getProcessParametersAsArray() {
+        return json_decode($this->processParameters, true);
+    }
 }
