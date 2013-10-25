@@ -49,6 +49,11 @@ class BackgroundProcess
      */
     private $successCount;
 
+    /**
+     * @var string $processType
+     */
+    private $processType;
+
 
     /**
      * Get id
@@ -148,6 +153,29 @@ class BackgroundProcess
     public function getStatus()
     {
         return $this->status;
+    }
+
+    /**
+     * Set processType
+     *
+     * @param string $processType
+     * @return BackgroundProcess
+     */
+    public function setProcessType($processType)
+    {
+        $this->processType = $processType;
+    
+        return $this;
+    }
+
+    /**
+     * Get processType
+     *
+     * @return string 
+     */
+    public function getProcessType()
+    {
+        return $this->processType;
     }
 
 
