@@ -35,6 +35,11 @@ class BackgroundProcess
     private $message;
 
     /**
+     * @var string $processParameters
+     */
+    private $processParameters;
+
+    /**
      * @var integer $toProcess
      */
     private $toProcess;
@@ -201,6 +206,30 @@ class BackgroundProcess
     public function getMessage()
     {
         return $this->message;
+    }
+
+
+    /**
+     * Set processParameters
+     *
+     * @param string $processParameters
+     * @return BackgroundProcess
+     */
+    public function setProcessParameters($processParameters)
+    {
+        $this->processParameters = $processParameters;
+    
+        return $this;
+    }
+
+    /**
+     * Get processParameters
+     *
+     * @return string 
+     */
+    public function getProcessParameters()
+    {
+        return $this->processParameters;
     }
 
 
