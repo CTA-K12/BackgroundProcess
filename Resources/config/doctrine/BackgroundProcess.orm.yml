@@ -47,6 +47,10 @@ MESD\BgProcess\BgProcessBundle\Entity\BackgroundProcess:
             column: process_parameters
             type: text
             nullable: true
+        processId:
+            column: process_id
+            type: integer
+            nullable: true
 
     lifecycleCallbacks:
         prePersist: [ setUpdatedValue ]

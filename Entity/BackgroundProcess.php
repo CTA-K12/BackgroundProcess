@@ -15,6 +15,11 @@ class BackgroundProcess
     private $id;
 
     /**
+     * @var integer $processId
+     */
+    private $processId;
+
+    /**
      * @var \DateTime $started
      */
     private $started;
@@ -320,6 +325,31 @@ class BackgroundProcess
     public function getSuccessCount()
     {
         return $this->successCount;
+    }
+
+
+
+    /**
+     * Set processId
+     *
+     * @param integer $processId
+     * @return BackgroundProcess
+     */
+    public function setProcessId($processId)
+    {
+        $this->processId = $processId;
+    
+        return $this;
+    }
+
+    /**
+     * Get processId
+     *
+     * @return integer 
+     */
+    public function getProcessId()
+    {
+        return $this->processId;
     }
 
 
