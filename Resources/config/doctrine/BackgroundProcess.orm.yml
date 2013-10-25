@@ -1,7 +1,7 @@
-MESD\ORMed\ORMedBundle\Entity\BackgroundProcess:
+MESD\BgProcess\BgProcessBundle\Entity\BackgroundProcess:
     type: entity
-    table: bgprocess.background_process
-    repositoryClass: MESD\ORMed\ORMedBundle\Repository\BackgroundProcessRepository
+    table: background_process
+    repositoryClass: MESD\BgProcess\BgProcessBundle\Repository\BackgroundProcessRepository
     fields:
         id:
             column: id
