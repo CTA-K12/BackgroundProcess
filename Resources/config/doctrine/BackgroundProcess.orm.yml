@@ -30,15 +30,19 @@ MESD\BgProcess\BgProcessBundle\Entity\BackgroundProcess:
         message:
             column: message
             type: text
+            nullable: true
         toProcess:
             column: to_process
             type: integer
+            nullable: false
         processed:
             column: processed
             type: integer
+            nullable: false
         successCount:
             column: success_count
             type: integer
+            nullable: false
 
     lifecycleCallbacks:
         prePersist: [ setUpdatedValue ]
