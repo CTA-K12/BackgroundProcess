@@ -39,6 +39,14 @@ class ProcessType {
     }
 
     /**
+     * @ORM\PrePersist
+     */
+    public function setUpdatedValue()
+    {
+        // Add your code here
+    }
+
+    /**
      * Default __toString.  Customize to suit
      */
     public function __toString()
