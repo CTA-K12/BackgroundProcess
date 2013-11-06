@@ -49,7 +49,7 @@ MESD\BgProcess\BgProcessBundle\Entity\BackgroundProcess:
 
     manyToOne:
         processType:
-            targetEntity: processType
+            targetEntity: ProcessType
 
     lifecycleCallbacks:
         prePersist: [ setUpdatedValue ]
