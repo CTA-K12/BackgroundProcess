@@ -3,6 +3,7 @@
 namespace MESD\BgProcess\BgProcessBundle\Tests\Entity;
 
 use MESD\BgProcess\BgProcessBundle\Entity\BackgroundProcess;
+use MESD\BgProcess\BgProcessBundle\Entity\ProcessType;
 
 class BackgroundProcessTest extends \PHPUnit_Framework_TestCase
 {
@@ -183,5 +184,21 @@ class BackgroundProcessTest extends \PHPUnit_Framework_TestCase
         $this->assertContains('moo', $bgProcess->getProcessParametersAsArray());
         $this->assertContains('meow', $bgProcess->getProcessParametersAsArray());
         $this->assertContains('woof', $bgProcess->getProcessParametersAsArray());
+    }
+
+    /**
+     *  Test the getset for ProcessType
+     */
+    public function testGetSetProcessType() {
+        $bgProcess = new BackgroundProcess();
+
+        $pType = new ProcessType();
+        $pType->setShortName('Unit Test');
+
+        $bgProcess->setProcessType($pType);
+
+        $this->assertNotNull($bgProcess->getProcessType());
+        $this->assertInstanceOf('MESD\BgProcess\BgProcessBundle\Entity\ProcessType', $bgProcess->getProcessType());
+        $this->assertEquals('Unit Test', $bgProcess->getProcessType()->getShortName());
     }
 }

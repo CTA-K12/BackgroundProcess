@@ -60,7 +60,7 @@ class BackgroundProcess
     private $successCount;
 
     /**
-     * @var string $processType
+     * @var MESD\BgProcess\BgProcessBundle\ProcessType
      */
     private $processType;
 
@@ -167,9 +167,6 @@ class BackgroundProcess
 
     /**
      * Set processType
-     *
-     * @param string $processType
-     * @return BackgroundProcess
      */
     public function setProcessType($processType)
     {
@@ -179,9 +176,7 @@ class BackgroundProcess
     }
 
     /**
-     * Get processType
-     *
-     * @return string 
+     * Get processType 
      */
     public function getProcessType()
     {
