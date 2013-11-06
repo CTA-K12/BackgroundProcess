@@ -17,11 +17,6 @@ MESD\BgProcess\BgProcessBundle\Entity\BackgroundProcess:
             column: updated
             type: datetime
             nullable: true
-        processType:
-            column: processType
-            type: string
-            length: 32
-            nullable: true
         status:
             column: status
             type: string
@@ -51,6 +46,10 @@ MESD\BgProcess\BgProcessBundle\Entity\BackgroundProcess:
             column: process_id
             type: integer
             nullable: true
+
+    manyToOne:
+        processType:
+            targetEntity: processType
 
     lifecycleCallbacks:
         prePersist: [ setUpdatedValue ]

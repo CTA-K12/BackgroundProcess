@@ -1,0 +1,29 @@
+MESD\BgProcess\BgProcessBundle\Entity\ProcessType:
+    type: entity
+    table: process_type
+    repositoryClass: MESD\BgProcess\BgProcessBundle\Repository\ProcessTypeRepository
+    fields:
+        id:
+            column: id
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        shortName:
+            column: short_name
+            type: string
+            length: 16
+            nullable: false
+        longName:
+            column: long_name
+            type: string
+            length: 64
+            nullable: false
+        message:
+            column: message
+            type: text
+            nullable: true
+
+    lifecycleCallbacks:
+        prePersist: [ setUpdatedValue ]
+        preUpdate: [ setUpdatedValue ]
