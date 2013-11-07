@@ -50,6 +50,8 @@ MESD\BgProcess\BgProcessBundle\Entity\BackgroundProcess:
     manyToOne:
         processType:
             targetEntity: ProcessType
+            joinColumn:
+                name: process_type_id
 
     lifecycleCallbacks:
         prePersist: [ setUpdatedValue ]
