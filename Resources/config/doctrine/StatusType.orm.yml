@@ -1,0 +1,29 @@
+MESD\BgProcess\BgProcessBundle\Entity\StatusType:
+    type: entity
+    table: status_type
+    repositoryClass: MESD\BgProcess\BgProcessBundle\Repository\StatusTypeRepository
+    fields:
+        id:
+            column: id
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        shortName:
+            column: short_name
+            type: string
+            length: 16
+            nullable: false
+        longName:
+            column: long_name
+            type: string
+            length: 64
+            nullable: false
+        isFinal:
+            column: is_final
+            type: boolean
+            nullable: false
+
+    lifecycleCallbacks:
+        prePersist: [ setUpdatedValue ]
+        preUpdate: [ setUpdatedValue ]

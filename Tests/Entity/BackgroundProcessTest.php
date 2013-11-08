@@ -4,6 +4,7 @@ namespace MESD\BgProcess\BgProcessBundle\Tests\Entity;
 
 use MESD\BgProcess\BgProcessBundle\Entity\BackgroundProcess;
 use MESD\BgProcess\BgProcessBundle\Entity\ProcessType;
+use MESD\BgProcess\BgProcessBundle\Entity\StatusType;
 
 class BackgroundProcessTest extends \PHPUnit_Framework_TestCase
 {
@@ -14,7 +15,6 @@ class BackgroundProcessTest extends \PHPUnit_Framework_TestCase
         $bgProcess = new BackgroundProcess();
 
         $this->assertNotNull($bgProcess);
-        $this->assertEquals('Starting', $bgProcess->getStatus());
         $this->assertNotNull($bgProcess->getStarted());
         $this->assertEquals(0, $bgProcess->getProcessed());
         $this->assertEquals(1, $bgProcess->getToProcess());
@@ -200,5 +200,23 @@ class BackgroundProcessTest extends \PHPUnit_Framework_TestCase
         $this->assertNotNull($bgProcess->getProcessType());
         $this->assertInstanceOf('MESD\BgProcess\BgProcessBundle\Entity\ProcessType', $bgProcess->getProcessType());
         $this->assertEquals('Unit Test', $bgProcess->getProcessType()->getShortName());
+    }
+
+    /**
+     *  Test the getset for StatusType
+     */
+    public function testGetSetStatusType() {
+        $bgProcess = new BackgroundProcess();
+
+        $sType = new StatusType();
+        $sType->setShortName('Running');
+        $sType->setLongName('Running');
+        $sType->setIsFinal(false);
+
+        $bgProcess->setStatusType($sType);
+
+        $this->assertNotNull($bgProcess->getStatusType());
+        $this->assertInstanceOf('MESD\BgProcess\BgProcessBundle\Entity\StatusType', $bgProcess->getStatusType());
+        $this->assertEquals('Running', $bgProcess->getStatusType()->getShortName());
     }
 }

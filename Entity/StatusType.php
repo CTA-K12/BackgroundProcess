@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * MESD\BgProcess\BgProcessBundle\Entity\BackgroundProcess
  */
-class ProcessType {
+class StatusType {
     /**
      * @var integer $id
      */
@@ -24,20 +24,20 @@ class ProcessType {
     private $longName;
 
     /**
-     * @var string $description
+     * @var boolean $isFinal
      */
-    private $description;
+    private $isFinal;
 
     //Constructor
-    public function __construct($shortName = null, $longName = null, $description = null) {
+    public function __construct($shortName = null, $longName = null, $isFinal = null) {
         if ($shortName) {
             $this->shortName = $shortName;
         }
         if ($longName) {
             $this->longName = $longName;
         }
-        if ($description) {
-            $this->description = $description;
+        if ($isFinal) {
+            $this->isFinal = $isFinal;
         }
     }
 
@@ -108,22 +108,22 @@ class ProcessType {
     }
 
     /**
-     * Set description
+     * Set isFinal
      */
-    public function setDescription($description)
+    public function setIsFinal($isFinal)
     {
-        $this->description = $description;
+        $this->isFinal = $isFinal;
     
         return $this;
     }
 
     /**
-     * Get description
+     * Get if the status type is final
      *
-     * @return string 
+     * @return boolean 
      */
-    public function getDescription()
+    public function getIsFinal()
     {
-        return $this->description;
+        return $this->isFinal;
     }
 }

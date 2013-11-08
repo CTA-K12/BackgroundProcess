@@ -30,9 +30,9 @@ class BackgroundProcess
     private $updated;
 
     /**
-     * @var string $status
+     * @var boolean $statusType
      */
-    private $status;
+    private $statusType;
 
     /**
      * @var string $message
@@ -76,7 +76,6 @@ class BackgroundProcess
     }
 
     public function __construct() {
-        $this->status = 'Starting';
         $this->started = new \DateTime();
         $this->toProcess = 1;
         $this->processed = 0;
@@ -143,26 +142,26 @@ class BackgroundProcess
 
 
     /**
-     * Set status
+     * Set statusType
      *
-     * @param string $status
+     * @param MESD/BgProcess/BgProcessBundle/StatusType $statusType
      * @return BackgroundProcess
      */
-    public function setStatus($status)
+    public function setStatusType($statusType)
     {
-        $this->status = $status;
+        $this->statusType = $statusType;
     
         return $this;
     }
 
     /**
-     * Get status
+     * Get statusType
      *
-     * @return string 
+     * @return MESD/BgProcess/BgProcessBundle/StatusType
      */
-    public function getStatus()
+    public function getStatusType()
     {
-        return $this->status;
+        return $this->statusType;
     }
 
     /**
