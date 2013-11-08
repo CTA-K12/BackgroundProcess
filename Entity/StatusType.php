@@ -29,16 +29,14 @@ class StatusType {
     private $isFinal;
 
     //Constructor
-    public function __construct($shortName = null, $longName = null, $isFinal = null) {
+    public function __construct($shortName = null, $longName = null, $isFinal = false) {
         if ($shortName != null) {
             $this->shortName = $shortName;
         }
         if ($longName != null) {
             $this->longName = $longName;
         }
-        if ($isFinal != null) {
-            $this->isFinal = $isFinal;
-        }
+        $this->isFinal = $isFinal;
     }
 
     /**
