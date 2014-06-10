@@ -1,11 +1,11 @@
 <?php
 
-namespace MESD\BgProcess\BgProcessBundle\Entity;
+namespace Mesd\BgProcessBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * MESD\BgProcess\BgProcessBundle\Entity\BackgroundProcess
+ * Mesd\BgProcessBundle\Entity\BackgroundProcess
  */
 class ProcessType {
     /**
@@ -44,7 +44,7 @@ class ProcessType {
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -73,14 +73,14 @@ class ProcessType {
     public function setShortName($shortName)
     {
         $this->shortName = $shortName;
-    
+
         return $this;
     }
 
     /**
      * Get shortName
      *
-     * @return string 
+     * @return string
      */
     public function getShortName()
     {
@@ -93,14 +93,14 @@ class ProcessType {
     public function setLongName($longName)
     {
         $this->longName = $longName;
-    
+
         return $this;
     }
 
     /**
      * Get longName
      *
-     * @return string 
+     * @return string
      */
     public function getLongName()
     {
@@ -113,14 +113,14 @@ class ProcessType {
     public function setDescription($description)
     {
         $this->description = $description;
-    
+
         return $this;
     }
 
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {

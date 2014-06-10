@@ -1,7 +1,7 @@
-MESD\BgProcess\BgProcessBundle\Entity\StatusType:
+Mesd\BgProcessBundle\Entity\StatusType:
     type: entity
     table: status_type
-    repositoryClass: MESD\BgProcess\BgProcessBundle\Repository\StatusTypeRepository
+    repositoryClass: Mesd\BgProcessBundle\Repository\StatusTypeRepository
     fields:
         id:
             column: id

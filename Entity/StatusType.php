@@ -1,11 +1,11 @@
 <?php
 
-namespace MESD\BgProcess\BgProcessBundle\Entity;
+namespace Mesd\BgProcessBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * MESD\BgProcess\BgProcessBundle\Entity\BackgroundProcess
+ * Mesd\BgProcessBundle\Entity\BackgroundProcess
  */
 class StatusType {
     /**
@@ -42,7 +42,7 @@ class StatusType {
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -71,14 +71,14 @@ class StatusType {
     public function setShortName($shortName)
     {
         $this->shortName = $shortName;
-    
+
         return $this;
     }
 
     /**
      * Get shortName
      *
-     * @return string 
+     * @return string
      */
     public function getShortName()
     {
@@ -91,14 +91,14 @@ class StatusType {
     public function setLongName($longName)
     {
         $this->longName = $longName;
-    
+
         return $this;
     }
 
     /**
      * Get longName
      *
-     * @return string 
+     * @return string
      */
     public function getLongName()
     {
@@ -111,14 +111,14 @@ class StatusType {
     public function setIsFinal($isFinal)
     {
         $this->isFinal = $isFinal;
-    
+
         return $this;
     }
 
     /**
      * Get if the status type is final
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getIsFinal()
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace MESD\BgProcess\BgProcessBundle\Repository;
+namespace Mesd\BgProcessBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 

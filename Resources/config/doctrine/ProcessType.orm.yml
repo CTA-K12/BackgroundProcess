@@ -1,7 +1,7 @@
-MESD\BgProcess\BgProcessBundle\Entity\ProcessType:
+Mesd\BgProcessBundle\Entity\ProcessType:
     type: entity
     table: process_type
-    repositoryClass: MESD\BgProcess\BgProcessBundle\Repository\ProcessTypeRepository
+    repositoryClass: Mesd\BgProcessBundle\Repository\ProcessTypeRepository
     fields:
         id:
             column: id

@@ -1,13 +1,13 @@
 {
-    "name": "mesd/bgprocess-bgprocess-bundle",
+    "name": "mesd/bgprocess-bundle",
     "license": "MIT",
     "type": "symfony-bundle",
     "description": "Background Process Bundle",
     "autoload": {
-        "psr-0": { "MESD\\BgProcess\\BgProcessBundle": "" }
+        "psr-0": { "Mesd\\BgProcessBundle": "" }
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*"
     },
-    "target-dir": "MESD/BgProcess/BgProcessBundle"
+    "target-dir": "Mesd/BgProcessBundle"
 }

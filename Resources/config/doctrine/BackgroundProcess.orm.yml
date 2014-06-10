@@ -1,7 +1,7 @@
-MESD\BgProcess\BgProcessBundle\Entity\BackgroundProcess:
+Mesd\BgProcessBundle\Entity\BackgroundProcess:
     type: entity
     table: background_process
-    repositoryClass: MESD\BgProcess\BgProcessBundle\Repository\BackgroundProcessRepository
+    repositoryClass: Mesd\BgProcessBundle\Repository\BackgroundProcessRepository
     fields:
         id:
             column: id

@@ -1,11 +1,11 @@
 <?php
 
-namespace MESD\BgProcess\BgProcessBundle\Entity;
+namespace Mesd\BgProcessBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * MESD\BgProcess\BgProcessBundle\Entity\BackgroundProcess
+ * Mesd\BgProcessBundle\Entity\BackgroundProcess
  */
 class BackgroundProcess
 {
@@ -60,7 +60,7 @@ class BackgroundProcess
     private $successCount;
 
     /**
-     * @var MESD\BgProcess\BgProcessBundle\ProcessType
+     * @var Mesd\BgProcessBundle\ProcessType
      */
     private $processType;
 
@@ -68,7 +68,7 @@ class BackgroundProcess
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -89,7 +89,7 @@ class BackgroundProcess
     {
         return (string)$this->getId();
     }
-    
+
 
     /**
      * Set started
@@ -100,14 +100,14 @@ class BackgroundProcess
     public function setStarted($started)
     {
         $this->started = $started;
-    
+
         return $this;
     }
 
     /**
      * Get started
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getStarted()
     {
@@ -125,14 +125,14 @@ class BackgroundProcess
     public function setUpdated($updated)
     {
         $this->updated = $updated;
-    
+
         return $this;
     }
 
     /**
      * Get updated
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getUpdated()
     {
@@ -150,7 +150,7 @@ class BackgroundProcess
     public function setStatusType($statusType)
     {
         $this->statusType = $statusType;
-    
+
         return $this;
     }
 
@@ -170,12 +170,12 @@ class BackgroundProcess
     public function setProcessType($processType)
     {
         $this->processType = $processType;
-    
+
         return $this;
     }
 
     /**
-     * Get processType 
+     * Get processType
      */
     public function getProcessType()
     {
@@ -193,14 +193,14 @@ class BackgroundProcess
     public function setMessage($message)
     {
         $this->message = $message;
-    
+
         return $this;
     }
 
     /**
      * Get message
      *
-     * @return string 
+     * @return string
      */
     public function getMessage()
     {
@@ -217,14 +217,14 @@ class BackgroundProcess
     public function setProcessParameters($processParameters)
     {
         $this->processParameters = $processParameters;
-    
+
         return $this;
     }
 
     /**
      * Get processParameters
      *
-     * @return string 
+     * @return string
      */
     public function getProcessParameters()
     {
@@ -254,7 +254,7 @@ class BackgroundProcess
     /**
      * Get toProcess
      *
-     * @return integer 
+     * @return integer
      */
     public function getToProcess()
     {
@@ -277,14 +277,14 @@ class BackgroundProcess
             }
             $this->processed = $processed;
         }
-    
+
         return $this;
     }
 
     /**
      * Get processed
      *
-     * @return integer 
+     * @return integer
      */
     public function getProcessed()
     {
@@ -307,14 +307,14 @@ class BackgroundProcess
             }
             $this->successCount = $successCount;
         }
-    
+
         return $this;
     }
 
     /**
      * Get successCount
      *
-     * @return integer 
+     * @return integer
      */
     public function getSuccessCount()
     {
@@ -332,14 +332,14 @@ class BackgroundProcess
     public function setProcessId($processId)
     {
         $this->processId = $processId;
-    
+
         return $this;
     }
 
     /**
      * Get processId
      *
-     * @return integer 
+     * @return integer
      */
     public function getProcessId()
     {
@@ -358,7 +358,7 @@ class BackgroundProcess
     /**
      *  Increment processed count
      */
-    public function increment() 
+    public function increment()
     {
         $this->setProcessed($this->getProcessed() + 1);
     }
@@ -366,7 +366,7 @@ class BackgroundProcess
     /**
      *  Increment processed and success count
      */
-    public function incrementSuccess() 
+    public function incrementSuccess()
     {
         $this->increment();
         $this->setSuccessCount($this->getSuccessCount() + 1);
@@ -375,7 +375,7 @@ class BackgroundProcess
     /**
      *  Increment failure (currently just another class to increment, but may be more in the future)
      */
-    public function incrementFailure() 
+    public function incrementFailure()
     {
         $this->increment();
     }

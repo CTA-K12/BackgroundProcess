@@ -1,8 +1,8 @@
 <?php
 
-namespace MESD\BgProcess\BgProcessBundle\Tests\Entity;
+namespace Mesd\BgProcessBundle\Tests\Entity;
 
-use MESD\BgProcess\BgProcessBundle\Entity\StatusType;
+use Mesd\BgProcessBundle\Entity\StatusType;
 
 class StatusTypeTest extends \PHPUnit_Framework_TestCase
 {
@@ -10,7 +10,7 @@ class StatusTypeTest extends \PHPUnit_Framework_TestCase
         $statusType1 = new StatusType();
 
         $this->assertNotNull($statusType1);
-        $this->assertInstanceOf('MESD\BgProcess\BgProcessBundle\Entity\StatusType', $statusType1);
+        $this->assertInstanceOf('Mesd\BgProcessBundle\Entity\StatusType', $statusType1);
 
         $statusType2 = new StatusType('Test', 'Super Test', true);
 

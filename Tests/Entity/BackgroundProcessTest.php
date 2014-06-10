@@ -1,10 +1,10 @@
 <?php
 
-namespace MESD\BgProcess\BgProcessBundle\Tests\Entity;
+namespace Mesd\BgProcessBundle\Tests\Entity;
 
-use MESD\BgProcess\BgProcessBundle\Entity\BackgroundProcess;
-use MESD\BgProcess\BgProcessBundle\Entity\ProcessType;
-use MESD\BgProcess\BgProcessBundle\Entity\StatusType;
+use Mesd\BgProcessBundle\Entity\BackgroundProcess;
+use Mesd\BgProcessBundle\Entity\ProcessType;
+use Mesd\BgProcessBundle\Entity\StatusType;
 
 class BackgroundProcessTest extends \PHPUnit_Framework_TestCase
 {
@@ -21,7 +21,7 @@ class BackgroundProcessTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(0, $bgProcess->getSuccessCount());
     }
 
-    /** 
+    /**
      *  Test the setToProcess method to ensure it follows its constraints
      */
     public function testSetToProcess() {
@@ -198,7 +198,7 @@ class BackgroundProcessTest extends \PHPUnit_Framework_TestCase
         $bgProcess->setProcessType($pType);
 
         $this->assertNotNull($bgProcess->getProcessType());
-        $this->assertInstanceOf('MESD\BgProcess\BgProcessBundle\Entity\ProcessType', $bgProcess->getProcessType());
+        $this->assertInstanceOf('Mesd\BgProcessBundle\Entity\ProcessType', $bgProcess->getProcessType());
         $this->assertEquals('Unit Test', $bgProcess->getProcessType()->getShortName());
     }
 
@@ -216,7 +216,7 @@ class BackgroundProcessTest extends \PHPUnit_Framework_TestCase
         $bgProcess->setStatusType($sType);
 
         $this->assertNotNull($bgProcess->getStatusType());
-        $this->assertInstanceOf('MESD\BgProcess\BgProcessBundle\Entity\StatusType', $bgProcess->getStatusType());
+        $this->assertInstanceOf('Mesd\BgProcessBundle\Entity\StatusType', $bgProcess->getStatusType());
         $this->assertEquals('Running', $bgProcess->getStatusType()->getShortName());
     }
 }

@@ -1,13 +1,13 @@
 <?php
 
-namespace MESD\BgProcess\BgProcessBundle;
+namespace Mesd\BgProcessBundle;
 
 use Symfony\Component\Console\Application;
 use Sensio\Bundle\GeneratorBundle\Generator\DoctrineCrudGenerator;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class MESDBgProcessBgProcessBundle extends Bundle
+class MesdBgProcessBundle extends Bundle
 {
 
     public function registerCommands(Application $application){

@@ -1,8 +1,8 @@
 <?php
 
-namespace MESD\BgProcess\BgProcessBundle\Tests\Entity;
+namespace Mesd\BgProcessBundle\Tests\Entity;
 
-use MESD\BgProcess\BgProcessBundle\Entity\ProcessType;
+use Mesd\BgProcessBundle\Entity\ProcessType;
 
 class ProcessTypeTest extends \PHPUnit_Framework_TestCase
 {
@@ -10,7 +10,7 @@ class ProcessTypeTest extends \PHPUnit_Framework_TestCase
         $processType1 = new ProcessType();
 
         $this->assertNotNull($processType1);
-        $this->assertInstanceOf('MESD\BgProcess\BgProcessBundle\Entity\ProcessType', $processType1);
+        $this->assertInstanceOf('Mesd\BgProcessBundle\Entity\ProcessType', $processType1);
 
         $processType2 = new ProcessType('Test', 'Super Test', 'Test Description');
 
